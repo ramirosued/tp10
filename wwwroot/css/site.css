@@ -19,3 +19,10 @@ footer {
   bottom: 0; 
   margin: 10px 0px 20px 0px;
 }
+
+.content{
+  margin-top: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

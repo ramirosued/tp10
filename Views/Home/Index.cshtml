@@ -1,20 +1,27 @@
 ﻿@{
-    ViewData["Title"] = "Index";
+  ViewData["Title"] = "Index";
 }
+<div class="content">
 @foreach (Series item in ViewBag.ListaSeries)
 {
-  <div class="card" style="width: 18rem;">
-  <img src="@item.ImagenSerie" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">@item.Nombre</h5>
-    <p class="card-text">@item.Sinopsis</p>
-    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSerieInfo" onclick="MostrarInfoSerie(@item.IdSerie)">Info</button>
-    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSerieInfo" onclick="MostrarTemporadasSerie(@item.IdSerie)">Temporadas</button>
-    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSerieInfo" onclick="MostrarActoresSerie(@item.IdSerie)">Actores</button>
 
+  <div class="card" style="width: 18rem;">
+    <img src="@item.ImagenSerie" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">@item.Nombre</h5>
+      <p class="card-text">@item.Sinopsis</p>
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSerieInfo"
+        onclick="MostrarInfoSerie(@item.IdSerie)">Info</button>
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSerieInfo"
+        onclick="MostrarTemporadasSerie(@item.IdSerie)">Temporadas</button>
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSerieInfo"
+        onclick="MostrarActoresSerie(@item.IdSerie)">Actores</button>
+
+    </div>
   </div>
-</div>
 }
+
+</div>
 
 <div class="modal" id="modalSerieInfo" tabindex="-1">
   <div class="modal-dialog">
@@ -23,7 +30,7 @@
         <h5 class="modal-title" id="NombreSerie"></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-    
+
       <div class="modal-body">
         <img class="img-fluid" id="FotoSerie">
         <h5 class="modal-title" id="AñoInicio"> </h5>
